@@ -19,20 +19,27 @@ int items[SIZE]; // khai báo mảng 5 phần tử để chứa dữ liệu
 int front = -1, rear = -1;
 ~~~
 
+**CODE: Check if the queue is full.**
 ~~~cpp
-// Check if the queue is full
 int isFull() {
   if ((front == rear + 1) || (front == 0 && rear == SIZE - 1)) return 1;
   return 0;
-  /* Ta cần lưu ý: nếu mà vị trí  front = 0; rear = 4 thì điều kiện front == rear + 1 là Queue full là không chính xác => Vì lúc này front = 0, nhưng rear + 1 = 5 
+  /*
+     - Ta cần lưu ý: nếu mà vị trí  front = 0; rear = 4 thì điều kiện front = 0 khác rear + 1 = 5 => return 0 nghĩa là Ring Buffer
+     chưa full => Sai.
+     - Cho nên ta cần phải có điều kiện: (front == 0 && rear = SIZE - ) => Tránh vào trường hợp như trên.
   */
 }
 ~~~
 <p align="center">
+    <img src="./Images/Image_3.png" width="500px" alt="">
+</p>
+
+<p align="center">
     <img src="./Images/Image_2.png" width="500px" alt="">
 </p>
 
-
+~~~cpp
 // Check if the queue is empty
 int isEmpty() {
   if (front == -1) return 1;
