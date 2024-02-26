@@ -25,9 +25,10 @@ int isFull() {
   if ((front == rear + 1) || (front == 0 && rear == SIZE - 1)) return 1;
   return 0;
   /*
-     - Ta cần lưu ý: nếu mà vị trí  front = 0; rear = 4 thì điều kiện front = 0 khác rear + 1 = 5 => return 0 nghĩa là Ring Buffer
-     chưa full => Sai.
-     - Cho nên ta cần phải có điều kiện: (front == 0 && rear = SIZE - ) => Tránh vào trường hợp như trên.
+     - Ta cần lưu ý: nếu mà vị trí  front = 0; rear = 4 thì điều kiện front = 0 khác rear + 1 = 5
+    => return 0 nghĩa là Ring Buffer chưa full => Sai.
+     - Cho nên ta cần phải có điều kiện: (front == 0 && rear = SIZE - ) => Tránh vào trường
+    hợp như trên.
   */
 }
 ~~~
